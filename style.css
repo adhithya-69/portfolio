@@ -15,9 +15,9 @@
   --clr-blue: #3B82F6;
 
   /* Neutrals */
-  --clr-white: #FFFFFF;
-  --clr-off-white: #F8FAFC;
-  --clr-light: #F1F5F9;
+  --clr-white: #FFF8F0;
+  --clr-off-white: #FFF1E6;
+  --clr-light: #FFE8D6;
   --clr-gray: #94A3B8;
   --clr-dark: #1E293B;
   --clr-black: #0F172A;
@@ -181,7 +181,7 @@ ul {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,248,240,0.88);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid rgba(15,23,42,0.06);
@@ -190,7 +190,7 @@ ul {
 
 .navbar.scrolled {
   box-shadow: var(--shadow-md);
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,248,240,0.96);
 }
 
 .navbar .container {
@@ -526,21 +526,12 @@ ul {
   inset: -12px;
   background: var(--grad-hero);
   border-radius: 50%;
-  opacity: 0.2;
-  animation: rotate-ring 12s linear infinite;
-}
-
-@keyframes rotate-ring {
-  to { transform: rotate(360deg); }
+  opacity: 0.1;
+  filter: blur(20px);
 }
 
 .hero-img-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border: 3px dashed rgba(255,107,53,0.3);
-  border-radius: 50%;
-  animation: rotate-ring 20s linear infinite reverse;
+  display: none;
 }
 
 .hero-img-wrapper img {
@@ -548,10 +539,12 @@ ul {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid var(--clr-white);
-  box-shadow: var(--shadow-lg);
+  border: none;
+  box-shadow: none;
   position: relative;
   z-index: 2;
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 75%);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 75%);
 }
 
 /* Floating shapes around hero image */
